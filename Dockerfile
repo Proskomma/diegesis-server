@@ -7,10 +7,10 @@ COPY data/ data/
 COPY src/ src/
 COPY LICENSE .
 COPY package.json .
-COPY package-lock.json .
+COPY yarn.lock .
 COPY default_config.json config.json
 
 # Install
-RUN npm install
+RUN yarn install
 
 CMD [ "node", "src/index.js", "config.json" ]
